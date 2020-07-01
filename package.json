@@ -1,5 +1,5 @@
 {
-  "name": "task3",
+  "name": "Calendar by Anton Tabachenko",
   "version": "1.0.0",
   "main": "webpack.config.js",
   "scripts": {
@@ -39,5 +39,5 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
-  "description": ""
+  "description": "my first react project"
 }
