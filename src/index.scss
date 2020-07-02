@@ -1,3 +1,6 @@
+$blue: #1a73e8;
+$black:#454648;
+
 * {
   box-sizing: border-box;
 }
@@ -5,13 +8,13 @@
 body {
   font-family: Roboto, Arial, sans-serif;
   line-height: 1;
-  color: #454648;
+  color: $black;
 }
 
 button{
   background: transparent;
   border: none;
-  color: #454648;
+  color: $black;
 }
 
 #root {
@@ -138,7 +141,7 @@ button{
   }
 
   &__day-name{
-    font-size: 35px;
+    font-size: 25px;
     text-transform: capitalize; 
   }
 
@@ -158,11 +161,15 @@ button{
   }
 
   &__day-name.current{
-
+    color: $blue;
   }
 
   &__day-date.current{
-    background: blue;
+    background:$blue;
+
+    .num{
+      color: white;
+    }
     
   }
 }
