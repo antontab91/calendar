@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className="calendar">
       <header className="header">
-        <div className="main-navigatin">
+        <nav className="header-navigatin">
           <button className="add-btn">
             <div className="add-btn__wr">
               <span className="add-btn__icon">
@@ -35,37 +35,8 @@ const App = () => {
               JUN2020
             </div>
           </div>
-        </div>
-        <nav className="week-navigatin">
-          <div className="week-navigatin__day">
-            <span className="week-navigatin__day-name current">SUN</span>
-            <span className="week-navigatin__day-date current">1</span>
-          </div>
-          <div className="week-navigatin__day">
-            <span className="week-navigatin__day-name">MUN</span>
-            <span className="week-navigatin__day-date">2</span>
-          </div>
-          <div className="week-navigatin__day">
-            <span className="week-navigatin__day-name">TUE</span>
-            <span className="week-navigatin__day-date">3</span>
-          </div>
-          <div className="week-navigatin__day">
-            <span className="week-navigatin__day-name">WED</span>
-            <span className="week-navigatin__day-date">4</span>
-          </div>
-          <div className="week-navigatin__day">
-            <span className="week-navigatin__day-name">THU</span>
-            <span className="week-navigatin__day-date">5</span>
-          </div>
-          <div className="week-navigatin__day">
-            <span className="week-navigatin__day-name">FRI</span>
-            <span className="week-navigatin__day-date">6</span>
-          </div>
-          <div className="week-navigatin__day">
-            <span className="week-navigatin__day-name">SAT</span>
-            <span className="week-navigatin__day-date">7</span>
-          </div>
         </nav>
+
       </header>
       <div className="main">
         <aside className="sidebar">
@@ -142,7 +113,53 @@ const App = () => {
             <span className="sidebar__hour-text">23:00</span>
           </div>
         </aside>
+
         <div className="table">
+          <nav className="table-navigatin">
+            <div className="table-navigatin__day">
+              <span className="table-navigatin__day-name current">SUN</span>
+              <span className="table-navigatin__day-date current">
+                <div className="num">1</div>
+              </span>
+            </div>
+            <div className="table-navigatin__day">
+              <span className="table-navigatin__day-name">MUN</span>
+              <span className="table-navigatin__day-date">
+                <div className="num">2</div>
+              </span>
+            </div>
+            <div className="table-navigatin__day">
+              <span className="table-navigatin__day-name">TUE</span>
+              <span className="table-navigatin__day-date">
+                <div className="num">3</div>
+              </span>
+            </div>
+            <div className="table-navigatin__day">
+              <span className="table-navigatin__day-name">WED</span>
+              <span className="table-navigatin__day-date">
+                <div className="num">4</div>
+              </span>
+            </div>
+            <div className="table-navigatin__day">
+              <span className="table-navigatin__day-name">THU</span>
+              <span className="table-navigatin__day-date">
+                <div className="num">5</div>
+              </span>
+            </div>
+            <div className="table-navigatin__day">
+              <span className="table-navigatin__day-name">FRI</span>
+              <span className="table-navigatin__day-date">
+                <div className="num">6</div>
+              </span>
+            </div>
+            <div className="table-navigatin__day">
+              <span className="table-navigatin__day-name">SAT</span>
+              <span className="table-navigatin__day-date">
+                <div className="num">7</div>
+              </span>
+            </div>
+          </nav>
+
           <div className="table__week">
             <div className="table__day">
               <div className="table__hour"></div>

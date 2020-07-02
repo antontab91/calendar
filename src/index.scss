@@ -11,26 +11,26 @@ body {
 button{
   background: transparent;
   border: none;
+  color: #454648;
 }
 
 #root {
-  padding: 0 15px;
 }
 
 .calendar{
-
+  
 }
 
 .header{
- 
+  border-bottom: 2px solid #dbdce0;
 }
 
-.main-navigatin{
+.header-navigatin{
   display: flex;
   max-width: 1000px;
   width: 100%;
   justify-content: space-between;
-  padding: 30px 0 20px;
+  padding: 30px 15px 20px;
 }
 
 .add-btn{
@@ -43,7 +43,6 @@ button{
   border: none;
   border-radius: 40px;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
-  color: #454648;
   
   &__wr{
     display: flex;
@@ -81,7 +80,7 @@ button{
   align-items: center;
   justify-content: space-between;
   &__btns-wr{
-    max-width: 80px;
+    max-width: 120px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -90,40 +89,26 @@ button{
 
   &__btn{
     border: none;
+    font-weight: bold;
+    font-size: 60px;
   }
 
   &__current-mounth{
     font-size: 60px;
-  }
-}
-
-.week-navigatin{
-  &__day{
-
-  }
-
-  &__day-name{
-
-  }
-
-  &__day-date{
-
-  }
-
-  &__day-name.current{
-
-  }
-
-  &__day-date.current{
-
+    font-weight: bold;
   }
 }
 
 .main{
-
+    padding: 0 15px;
+    display: flex;
 }
 
 .sidebar{
+  max-width: 150px;
+  width: 100%;
+  padding-top: 165px;
+
   &__hour{
 
   }
@@ -133,7 +118,57 @@ button{
   }
 }
 
+.table-navigatin{
+  display: flex;
+  justify-content: space-between;
+  
+
+  // span{
+  //   display: block;
+  // }
+
+  &__day{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 100%;
+    flex-grid-row: 1;
+    flex-shrink: 1;
+  }
+
+  &__day-name{
+    font-size: 35px;
+    text-transform: capitalize; 
+  }
+
+  &__day-date{
+    font-size: 60px;
+    font-weight: 500;
+    width: 95px;
+    height: 95px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .num{
+
+    }
+  }
+
+  &__day-name.current{
+
+  }
+
+  &__day-date.current{
+    background: blue;
+    
+  }
+}
+
 .table{
+  width: 100%;
   &__week{
 
   }
@@ -146,3 +181,4 @@ button{
 
   }
 }
+
