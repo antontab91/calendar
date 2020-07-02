@@ -103,7 +103,7 @@ button{
 }
 
 .main{
-    padding: 0 15px;
+    padding: 0 15px 50px;
     display: flex;
 }
 
@@ -153,6 +153,7 @@ button{
     flex-shrink: 1;
     position: relative;
     padding-bottom: 20px;
+  
 
     &::before{
       content: '';
@@ -215,6 +216,7 @@ button{
     height: 90px;
     border-top: 1px solid $black;
     border-left: 1px solid $black;
+      min-width: 95px;
   }
 }
 
