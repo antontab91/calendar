@@ -9,3 +9,103 @@ body {
 .root {
   margin: 0 10px;
 }
+
+.calendar{
+
+}
+
+.header{
+
+}
+
+.main-navigatin{
+
+}
+
+.add-btn{
+  max-width: 230px;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__icon{
+
+  }
+
+  &__text{
+
+  }
+}
+
+.current-date-btn{
+
+  &__text{
+
+  }
+}
+
+.mounth-navigation{
+  &__btns-wr{
+
+  }
+
+  &__btn{
+
+  }
+
+  &__current-mounth{
+
+  }
+}
+
+.week-navigatin{
+  &__day{
+
+  }
+
+  &__day-name{
+
+  }
+
+  &__day-date{
+
+  }
+
+  &__day-name.current{
+
+  }
+
+  &__day-date.current{
+
+  }
+}
+
+.main{
+
+}
+
+.time-sidebar{
+  &__hour{
+
+  }
+
+  &__hour-text{
+
+  }
+}
+
+.calendar{
+  &__week{
+
+  }
+
+  &__day{
+
+  }
+
+  &__hour{
+
+  }
+}

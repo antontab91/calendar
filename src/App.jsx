@@ -1,5 +1,6 @@
 import React from "react";
 import Calendar from "./Calendar";
+import './index.scss'
 
 const App = () => {
   return (
@@ -21,46 +22,46 @@ const App = () => {
           </button>
           <div className="mounth-navigation">
             <div className="mounth-navigation__btns-wr">
-              <button className="mounth-navigation__btn-left">
+              <button className="mounth-navigation__btn-left mounth-navigation__btn">
                 {"<"}
               </button>
-              <button className="mounth-navigation__btn-right">
+              <button className="mounth-navigation__btn-right mounth-navigation__btn">
                 {">"}
               </button>
             </div>
-            <div className="current-mounth">
+            <div className="mounth-navigation__current-mounth">
               JUN2020
             </div>
           </div>
         </div>
         <nav className="week-navigatin">
           <div className="week-navigatin__day">
-            <span className="day-name">SUN</span>
-            <span className="day-date">1</span>
+            <span className="week-navigatin__day-name current">SUN</span>
+            <span className="week-navigatin__day-date current">1</span>
           </div>
           <div className="week-navigatin__day">
-            <span className="day-name">MUN</span>
-            <span className="day-date">2</span>
+            <span className="week-navigatin__day-name">MUN</span>
+            <span className="week-navigatin__day-date">2</span>
           </div>
           <div className="week-navigatin__day">
-            <span className="day-name">TUE</span>
-            <span className="day-date">3</span>
+            <span className="week-navigatin__day-name">TUE</span>
+            <span className="week-navigatin__day-date">3</span>
           </div>
           <div className="week-navigatin__day">
-            <span className="day-name">WED</span>
-            <span className="day-date">4</span>
+            <span className="week-navigatin__day-name">WED</span>
+            <span className="week-navigatin__day-date">4</span>
           </div>
           <div className="week-navigatin__day">
-            <span className="day-name">THU</span>
-            <span className="day-date">5</span>
+            <span className="week-navigatin__day-name">THU</span>
+            <span className="week-navigatin__day-date">5</span>
           </div>
           <div className="week-navigatin__day">
-            <span className="day-name">FRI</span>
-            <span className="day-date">6</span>
+            <span className="week-navigatin__day-name">FRI</span>
+            <span className="week-navigatin__day-date">6</span>
           </div>
           <div className="week-navigatin__day">
-            <span className="day-name">SAT</span>
-            <span className="day-date">7</span>
+            <span className="week-navigatin__day-name">SAT</span>
+            <span className="week-navigatin__day-date">7</span>
           </div>
         </nav>
       </header>
@@ -140,7 +141,190 @@ const App = () => {
           </div>
         </aside>
         <div className="calendar">
-          <div className="calendar-day"></div>
+          <div className="calendae__week">
+            <div className="calendar__day">
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+            </div>
+            <div className="calendar__day">
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+            </div>
+            <div className="calendar__day">
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+            </div>
+            <div className="calendar__day">
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+            </div>
+            <div className="calendar__day">
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+            </div>
+            <div className="calendar__day">
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+            </div>
+            <div className="calendar__day">
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+              <div className="calendar__hour"></div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="pop-up"></div>
