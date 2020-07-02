@@ -4,10 +4,17 @@
 
 body {
   font-family: Roboto, Arial, sans-serif;
+  line-height: 1;
+  color: #454648;
 }
 
-.root {
-  margin: 0 10px;
+button{
+  background: transparent;
+  border: none;
+}
+
+#root {
+  padding: 0 15px;
 }
 
 .calendar{
@@ -15,11 +22,15 @@ body {
 }
 
 .header{
-
+ 
 }
 
 .main-navigatin{
-
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  justify-content: space-between;
+  padding: 30px 0 20px;
 }
 
 .add-btn{
@@ -29,34 +40,60 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  &__icon{
-
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  color: #454648;
+  
+  &__wr{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 140px;
+    width: 100%;
   }
-
+  
+  &__icon{
+    font-size: 90px;
+  }
+  
   &__text{
-
+    font-size: 22px;
   }
 }
 
 .current-date-btn{
-
+  max-width: 160px;
+  width: 100%;
+  border: 2px solid #dcdcdc ;
+  border-radius: 5px;
+  
   &__text{
-
+    font-size: 22px;
+    font-weight: bold;
   }
 }
 
 .mounth-navigation{
+  max-width: 490px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   &__btns-wr{
-
+    max-width: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__btn{
-
+    border: none;
   }
 
   &__current-mounth{
-
+    font-size: 60px;
   }
 }
 
@@ -86,7 +123,7 @@ body {
 
 }
 
-.time-sidebar{
+.sidebar{
   &__hour{
 
   }
@@ -96,7 +133,7 @@ body {
   }
 }
 
-.calendar{
+.table{
   &__week{
 
   }
