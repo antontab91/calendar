@@ -110,10 +110,11 @@ button{
 .sidebar{
   max-width: 150px;
   width: 100%;
-  padding-top: 165px;
+  padding-top: 180px;
 
   &__hour{
-
+    height: 90px;
+    border-bottom: 1px solid $black;
   }
 
   &__hour-text{
@@ -124,11 +125,8 @@ button{
 .table-navigatin{
   display: flex;
   justify-content: space-between;
+  padding: 30px 0;
   
-
-  // span{
-  //   display: block;
-  // }
 
   &__day{
     display: flex;
@@ -177,15 +175,17 @@ button{
 .table{
   width: 100%;
   &__week{
-
+    display: flex;
+    width: 100%;
   }
 
   &__day{
-
+    flex-basis: 100%;
   }
 
   &__hour{
-
+       height: 90px;
+       border: 1px solid $black;
   }
 }
 
