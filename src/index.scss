@@ -114,11 +114,23 @@ button{
 
   &__hour{
     height: 90px;
-    border-bottom: 1px solid $black;
+    // border-bottom: 1px solid $black;
+    position: relative;
+
+    &::before{
+      content: '';
+      position: absolute;
+      width: 20%;
+      height: 1px;
+      background: $black;
+      top: 0;
+      right: 0;
+    }
+
   }
 
   &__hour-text{
-
+    font-size: 18px;
   }
 }
 
@@ -184,8 +196,8 @@ button{
   }
 
   &__hour{
-       height: 90px;
-       border: 1px solid $black;
+    height: 90px;
+    border-left: 1px solid $black;
   }
 }
 
