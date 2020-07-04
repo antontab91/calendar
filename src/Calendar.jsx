@@ -8,9 +8,14 @@ class Calendar extends React.Component {
     super(props);
 
     this.state = {
-
+      today: new Date(),
+      shownPopup: false,
+      zerroDay: 0,
     }
   }
+
+
+
 
   render() {
     return (
