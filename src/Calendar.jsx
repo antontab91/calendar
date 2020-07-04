@@ -94,9 +94,6 @@ class Calendar extends React.Component {
             </nav>
           </div>
 
-
-
-
         </header>
         <div className="main">
           <aside className="sidebar">
