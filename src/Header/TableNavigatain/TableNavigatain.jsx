@@ -1,4 +1,5 @@
 import React from 'react';
+import './tableNavigatain.scss';
 
 const TableNavigatain = () => {
   return (

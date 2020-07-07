@@ -1,4 +1,5 @@
 import React from 'react';
+import './addBtn.scss';
 
 const AddButton = () => {
   return (

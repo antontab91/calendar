@@ -1,0 +1,12 @@
+
+.current-date-btn{
+  max-width: 160px;
+  width: 100%;
+  border: 2px solid #dcdcdc ;
+  border-radius: 5px;
+  
+  &__text{
+    font-size: 22px;
+    font-weight: bold;
+  }
+}

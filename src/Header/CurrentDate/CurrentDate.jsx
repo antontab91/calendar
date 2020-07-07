@@ -1,4 +1,5 @@
 import React from 'react';
+import './currentDate.scss';
 
 const CurrentDate = () => {
   return (

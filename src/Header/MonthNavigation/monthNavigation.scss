@@ -1,0 +1,26 @@
+.mounth-navigation{
+  max-width: 490px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__btns-wr{
+    max-width: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__btn{
+    border: none;
+    font-weight: bold;
+    font-size: 60px;
+  }
+
+  &__current-mounth{
+    font-size: 60px;
+    font-weight: bold;
+  }
+}

@@ -3,6 +3,7 @@ import AddButton from './AddBtn/AddBtn.jsx';
 import CurrentDate from './CurrentDate/CurrentDate.jsx';
 import MonthNavigation from './MonthNavigation/MonthNavigation.jsx';
 import TableNavigatain from './TableNavigatain/TableNavigatain.jsx';
+import './header.scss';
 
 
 class Header extends React.Component {
