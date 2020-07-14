@@ -1,8 +1,10 @@
 import React from 'react';
+import rangeGenerator from '../utilites'
 
 class Main extends React.Component {
 
     render() {
+
         return (
             <div className="main">
                 <aside className="sidebar">
@@ -82,188 +84,39 @@ class Main extends React.Component {
 
                 <div className="table">
                     <div className="table__week">
-                        <div className="table__day">
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                        </div>
-                        <div className="table__day">
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                        </div>
-                        <div className="table__day">
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                        </div>
-                        <div className="table__day">
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                        </div>
-                        <div className="table__day">
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                        </div>
-                        <div className="table__day">
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                        </div>
-                        <div className="table__day">
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                            <div className="table__hour"></div>
-                        </div>
+                        {
+                            rangeGenerator(0, 6).map((day) => {
+                                return (
+                                    <div key={Math.random()} className="table__day">                 //
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                        <div className="table__hour"></div>
+                                    </div>
+                                )
+                            })
+                        }
+
                     </div>
                 </div>
             </div>
