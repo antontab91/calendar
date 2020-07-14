@@ -1,44 +1,59 @@
 import React from 'react';
+import moment from 'moment';
 import Header from './Header/Header.jsx';
 import Main from './Main/Main.jsx';
 import Popup from './Poppup/Poppup.jsx';
-
-
-// Algo getMonday
-// 1 отталкиваемся от теущей даты - записываем ее в переменную тудей , обьявляем переменну мандей , куда будем записывать дату понедельника 
-// 2 перебераем неделю по индексам (начинается с 0 (неделя по американски начинается с вс))
-// 3 если индекс дня не равен 1 (понедельнику ) , записываем тудей новую дату на день меньше , пока не дойдем до нужного индекса 
-// 4 если индекс равен 1 - это понедельник ,то что нужно 
-
-
-export const getMonday = () => {
-  const today = new Date();
-  let monday = null;
-  for (let i = 0; i < 7; i++) {
-    if (today.getDay() !== 1) {
-      today.setDate(today.getDate() - 1);
-    } else {
-      monday = today;
-    }
-  }
-  return monday;
-};
-
 
 class Calendar extends React.Component {
   constructor(props) {
     super(props);
 
+    // const today = moment().startOf('day').format(); // текущая дата с нулевым временем
+    const today = moment().format(); // текущая дата  
+
     this.state = {
-      today: new Date(),
-      monday: getMonday(),
+      currDate: today,
+      viewedDate: today,
+      // viewedDate: today.startOf('isoWeek').format() // начало недели 
     }
   }
 
+  goToNextWeek = () => {
+    const { viewedDate } = this.state;
+
+    this.setState({
+      viewedDate: moment(viewedDate).add(7, 'days').format()
+    })
+  }
+
+  goToPrevWeek = () => {
+    const { viewedDate } = this.state;
+
+    this.setState({
+      viewedDate: moment(viewedDate).add(-7, 'days').format(),
+    })
+  };
+
+  goToCurrent = () => {
+    const { currDate } = this.state;
+
+    this.setState({
+      viewedDate: currDate
+    });
+  };
+
   render() {
+    const { currDate, viewedDate } = this.state;
+
     return (
       <div className="calendar">
-        <Header />
+        <Header
+          currDate={currDate}
+          viewedDate={viewedDate}
+          goToNextWeek={this.goToNextWeek}
+          goToPrevWeek={this.goToPrevWeek}
+          goToCurrent={this.goToCurrent}
+        />
         <Main />
         <Popup />
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import rangeGenerator from '../utilites'
+import { rangeGenerator } from '../utilites'
 import Day from './Day/Day.jsx'
 
 class Main extends React.Component {
