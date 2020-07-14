@@ -19,7 +19,7 @@ export function getRangeOfHoursByDate(date) {
 
   for (let i = 0; i <= 23; i++) {
     hours.push(moment(dayStart).subtract(-i, "hours").format());
-    // hours.push(`${i > 9 ? i : '0' + i}:00`);
+    // hours.push(`${i > 9 ? i : '0' + i}:00`);                          // то же самое , только хардкодом , а не библиотекой 
   }
 
   return hours;
