@@ -1,7 +1,7 @@
 import moment from "moment";
 
 export function getRangeOfDaysByDate(date) {           // функция генерирующая массив дат , дней 
-  const weekStart = moment(date).startOf('isoWeek'); // начало недели от текущей даты 
+  const weekStart = moment(date).startOf('isoWeek');   // начало недели от текущей даты 
 
   const days = [];
 
