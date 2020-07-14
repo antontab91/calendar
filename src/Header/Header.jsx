@@ -21,7 +21,7 @@ class Header extends React.Component {
                 <nav className="header-navigatin">
                     <div className="header-navigatin__wr">
                         <AddButton />
-                        <CurrentDate goToCurrent={goToCurrent} viewedDate={viewedDate} />
+                        <CurrentDate goToCurrent={goToCurrent} />
                         <MonthNavigation
                             viewedDate={viewedDate}
                             goToNextWeek={goToNextWeek}

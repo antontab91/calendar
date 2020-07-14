@@ -18,6 +18,9 @@ class Calendar extends React.Component {
       currDate: today,
       viewedDate: today,                                    // просматриваемая неделя , по дефолту от текущей даты 
       // viewedDate: today.startOf('isoWeek').format() // начало недели 
+
+      popupIsShow: false,
+
       events: [{
         id: '2020-07-14T15:30:00+03:00',
         date: '2020-07-14T15:30:00+03:00',
@@ -96,7 +99,7 @@ class Calendar extends React.Component {
   render() {
     const { currDate, viewedDate, events } = this.state;
 
-    const filterEvents = events.filter((event) => moment(event.date).isSame(viewedDate, 'isoWeek'));  // тут  отфильтровал по текущей неделе 
+    const filterEvents = events.filter((event) => moment(event.date).isSame(viewedDate, 'isoWeek'));  // тут отфильтровал по текущей неделе , для того чтобы показывало ивенты только текущей недели 
 
     console.log('filterEvents', filterEvents)
 
@@ -110,7 +113,11 @@ class Calendar extends React.Component {
           goToPrevWeek={this.goToPrevWeek}          // - неделя
           goToCurrent={this.goToCurrent}            // текущая   
         />
-        <Main currDate={currDate} viewedDate={viewedDate} events={filterEvents} />
+        <Main
+          currDate={currDate}
+          viewedDate={viewedDate}
+          events={filterEvents}
+        />
         <Popup />
       </div>
     )

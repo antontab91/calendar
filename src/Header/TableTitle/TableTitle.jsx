@@ -5,13 +5,14 @@ import cn from "classnames";
 import { getRangeOfDaysByDate } from "../../utilites";
 import './tableTitle.scss';
 
-const today = Date.now();
-const week = ['SUN', 'MUN', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+// const today = Date.now();                                         // Андрей или Вася ! если вы это читаете , я не удаляю закомиченное . тк мне так легче, это первый мой проэкт на реакт . я путался пока не стал прописывать то что сделал в коментах 
+// const week = ['SUN', 'MUN', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
 
 // const TableNavigation = ({ week, today }) => {
 const TableNavigation = ({ currDate, viewedDate }) => {
-  const week = getRangeOfDaysByDate(viewedDate);
+
+  const week = getRangeOfDaysByDate(viewedDate);      // 
 
   console.log({
     week,
@@ -24,11 +25,11 @@ const TableNavigation = ({ currDate, viewedDate }) => {
       <div className="table-navigation__gmt"></div>
       <nav className="table-navigation__week">
         {week.map((day) => {
-          const mDay = moment(day); // преобразовываем в момент обьект , для того чтобы заюзать нужные момент методы
+          const mDay = moment(day); // преобразовываем в момент обьект , для того чтобы заюзать нужные  методы библиотеки момент 
 
           const title = mDay.format('ddd');
           const dayNumber = mDay.format('DD');
-          const isActive = mDay.isSame(currDate, 'day');  // парамнетр дэй указывает на то что нужно проверять именно дни 
+          const isActive = mDay.isSame(currDate, 'day');  // парамнетр дэй указывает на то что нужно проверять именно дни , не забыть что означает иссейм (срввниваю день с текущей датой )
 
           return (
             <div key={day} className="table-navigation__day">
