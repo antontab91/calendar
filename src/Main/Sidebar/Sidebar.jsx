@@ -3,7 +3,7 @@ import moment from 'moment';
 import './sidebar.scss'
 import { getRangeOfHoursByDate } from '../../utilites';
 
-const hours = getRangeOfHoursByDate(new Date()); // массив часов , если это читает Андрей или Вася , я себе все это пишу в коментах чтобы не запутаться . пс понимаю что на реальных проэктах такой срач не допустим 
+const hours = getRangeOfHoursByDate(new Date()); // массив часов 
 
 class Sidebar extends React.Component {
   render() {

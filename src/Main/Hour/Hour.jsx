@@ -24,7 +24,9 @@ class Hour extends React.Component {
 
     return (
       <div className="table__hour" >
+
         {isActive ? <RedLine hour={hour} currDate={currDate} /> : null}
+
         {events.map(event => {
           return (<Event key={event.id} event={event} hour={hour} />
           )
