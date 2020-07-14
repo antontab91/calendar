@@ -38,9 +38,7 @@ class Calendar extends React.Component {
   render() {
     return (
       <div className="calendar">
-        <Header
-
-        />
+        <Header />
         <Main />
         <Popup />
       </div>
