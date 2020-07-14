@@ -1,5 +1,6 @@
 import React from 'react';
 import rangeGenerator from '../utilites'
+import Day from './Day/Day.jsx'
 
 class Main extends React.Component {
 
@@ -81,42 +82,15 @@ class Main extends React.Component {
                         <span className="sidebar__hour-text">23:00</span>
                     </div>
                 </aside>
-
                 <div className="table">
                     <div className="table__week">
                         {
                             rangeGenerator(0, 6).map((day) => {
                                 return (
-                                    <div key={Math.random()} className="table__day">                 //
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                        <div className="table__hour"></div>
-                                    </div>
+                                    <Day key={Math.random()} />                                   // потом заменить ключи не забыть 
                                 )
                             })
                         }
-
                     </div>
                 </div>
             </div>
