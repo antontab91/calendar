@@ -13,7 +13,7 @@ class Header extends React.Component {
             viewedDate,
             goToNextWeek,
             goToPrevWeek,
-            goToCurrent
+            goToCurrent,
         } = this.props;
 
         return (
