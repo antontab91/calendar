@@ -1,6 +1,6 @@
 import moment from "moment";
 
-export function getWeekByDate(date) {
+export function getRangeOfDaysByDate(date) {
   const weekStart = moment(date).startOf('isoWeek'); // начало недели от текущей даты 
 
   const days = [];
@@ -12,13 +12,17 @@ export function getWeekByDate(date) {
   return days;
 }
 
-export const rangeGenerator = (from, to) => {
-  const result = [];
+export function getRangeOfHoursByDate(date) {
+  const dayStart = moment(date).startOf('day');
 
-  for (let i = from; i <= to; i++) {
-    result.push(i);
-  };
-  return result;
+  const hours = [];
+
+  for (let i = 0; i <= 23; i++) {
+    hours.push(moment(dayStart).subtract(-i, "hours").format());
+    // hours.push(`${i > 9 ? i : '0' + i}:00`);
+  }
+
+  return hours;
 }
 
 

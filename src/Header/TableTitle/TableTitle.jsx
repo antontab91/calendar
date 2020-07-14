@@ -2,18 +2,16 @@ import React from 'react';
 import moment from "moment";
 import cn from "classnames";
 
-import { getWeekByDate } from "../../utilites";
+import { getRangeOfDaysByDate } from "../../utilites";
 import './tableTitle.scss';
 
 const today = Date.now();
 const week = ['SUN', 'MUN', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
 
-window.m = moment
-
 // const TableNavigation = ({ week, today }) => {
 const TableNavigation = ({ currDate, viewedDate }) => {
-  const week = getWeekByDate(viewedDate);
+  const week = getRangeOfDaysByDate(viewedDate);
 
   console.log({
     week,

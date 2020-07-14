@@ -8,15 +8,15 @@ const MounthNavigation = ({
   goToPrevWeek
 }) => {
 
-  const weekStart = moment(viewedDate).startOf('isoWeek');
-  const weekEnd = moment(viewedDate).endOf('isoWeek');
+  const weekStart = moment(viewedDate).startOf('isoWeek'); // определяем начало просматривоемой недели 
+  const weekEnd = moment(viewedDate).endOf('isoWeek');      // конец 
 
   let title;
 
-  if (weekStart.isSame(weekEnd, 'month')) {
-    title = weekStart.format('MMMM YYYY');
+  if (weekStart.isSame(weekEnd, 'month')) {   // проверяем по месяцу , если такой же месяц на конец и на начало показываемой на экране недели 
+    title = weekStart.format('MMMM YYYY');    // тогда запись в формате одного месяца 
   } else {
-    title = `${weekStart.format('MMM')}-${weekEnd.format('MMM YYYY')}`;
+    title = `${weekStart.format('MMM')}-${weekEnd.format('MMM YYYY')}`; // если начало недели одного месяца , а конец другого месяца - то запись тогда в формате 2 месяцев 
   }
 
   return (

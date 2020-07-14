@@ -12,11 +12,61 @@ class Calendar extends React.Component {
     const today = moment().format(); // текущая дата  
 
     this.state = {
+      // currDate: '2020-07-14T15:51:55+03:00',
+      // currDate: '2020-07-14T15:30:00+03:00',
       currDate: today,
       viewedDate: today,
       // viewedDate: today.startOf('isoWeek').format() // начало недели 
+      events: [{
+        id: '2020-07-14T15:30:00+03:00',
+        date: '2020-07-14T15:30:00+03:00',
+        title: 'ДР Андрея',
+        description: 'нужно поздравить'
+      },
+      {
+        id: '2020-07-14T16:30:00+03:00',
+        date: '2020-07-14T16:30:00+03:00',
+        title: 'ДР Андрея2',
+        description: 'нужно поздравить2'
+      },
+      {
+        id: '2020-07-21T15:51:55+03:00',
+        date: '2020-07-21T15:51:55+03:00',
+        title: 'ДР Пети',
+        description: 'нужно поздравить родителей Пети'
+      }
+      ]
     }
   }
+
+  // componentDidMount() {
+  // const events = getEvents().resolve((data) => data.json()).resolve(date => {
+  //   this.setState({ events })
+  // });
+
+  // {
+  //   id: '2020-07-14T15:51:55+03:00',
+  //     title: 'ДР Андрея',
+  //       description: 'нужно поздравить'
+  // }
+
+  // }
+
+  // componentDidMount() {
+  //   const { events } = this.state;
+
+  //   setTimeout(() => {
+  //     this.setState({
+  //       events: [...events, {
+  //         id: '2020-07-14T19:30:00+03:00',
+  //         date: '2020-07-14T19:30:00+03:00',
+  //         title: 'сходить в магазин',
+  //         description: 'снять капусту, сходить в сильпо'
+  //       }]
+  //     });
+
+  //   }, 5000);
+  // }
 
   goToNextWeek = () => {
     const { viewedDate } = this.state;
@@ -43,7 +93,12 @@ class Calendar extends React.Component {
   };
 
   render() {
-    const { currDate, viewedDate } = this.state;
+    const { currDate, viewedDate, events } = this.state;
+
+    const filterEvents = events.filter((event) => moment(event.date).isSame(viewedDate, 'isoWeek'));
+
+    console.log('filterEvents', filterEvents)
+
 
     return (
       <div className="calendar">
@@ -54,7 +109,7 @@ class Calendar extends React.Component {
           goToPrevWeek={this.goToPrevWeek}
           goToCurrent={this.goToCurrent}
         />
-        <Main />
+        <Main currDate={currDate} viewedDate={viewedDate} events={filterEvents} />
         <Popup />
       </div>
     )
