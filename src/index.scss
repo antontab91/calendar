@@ -35,43 +35,6 @@ button{
     display: flex;
 }
 
-.sidebar{
-  max-width: 150px;
-  width: 100%;
-  min-width: 80px;
-
-  &__hour{
-    height: 90px;
-    position: relative;
-
-    &::before{
-      content: '';
-      position: absolute;
-      width: 30px;
-      height: 1px;
-      background: $black;
-      top: 0;
-      right: 0;
-    }
-  }
-
-  &__hour-text{
-    font-size: 18px;
-    position: absolute;
-    top: -7px;
-    right: 40px;
-  }
-
-  .first{
-    &::before{
-      display: none;
-    }
-
-    &__hour{
-      display: none;
-    }
-  }
-}
 
 
 
