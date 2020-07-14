@@ -8,14 +8,15 @@ class Calendar extends React.Component {
   constructor(props) {
     super(props);
 
-    // const today = moment().startOf('day').format(); // текущая дата с нулевым временем
+    // const today = moment().startOf('day').format(); // текущая дата с нулевым временем такой формат 2020-07-14T15:51:55+03:00
     const today = moment().format(); // текущая дата  
+    console.log(`today: ${today}`)
 
     this.state = {
       // currDate: '2020-07-14T15:51:55+03:00',
       // currDate: '2020-07-14T15:30:00+03:00',
       currDate: today,
-      viewedDate: today,
+      viewedDate: today,                                    // просматриваемая неделя , по дефолту от текущей даты 
       // viewedDate: today.startOf('isoWeek').format() // начало недели 
       events: [{
         id: '2020-07-14T15:30:00+03:00',
@@ -95,7 +96,7 @@ class Calendar extends React.Component {
   render() {
     const { currDate, viewedDate, events } = this.state;
 
-    const filterEvents = events.filter((event) => moment(event.date).isSame(viewedDate, 'isoWeek'));
+    const filterEvents = events.filter((event) => moment(event.date).isSame(viewedDate, 'isoWeek'));  // тут  отфильтровал по текущей неделе 
 
     console.log('filterEvents', filterEvents)
 
@@ -103,11 +104,11 @@ class Calendar extends React.Component {
     return (
       <div className="calendar">
         <Header
-          currDate={currDate}
-          viewedDate={viewedDate}
-          goToNextWeek={this.goToNextWeek}
-          goToPrevWeek={this.goToPrevWeek}
-          goToCurrent={this.goToCurrent}
+          currDate={currDate}                      // текущая дата в формате 2020-07-14T15:51:55+03:00
+          viewedDate={viewedDate}                   // показываемая дата в том же формате 
+          goToNextWeek={this.goToNextWeek}          // + неделя
+          goToPrevWeek={this.goToPrevWeek}          // - неделя
+          goToCurrent={this.goToCurrent}            // текущая   
         />
         <Main currDate={currDate} viewedDate={viewedDate} events={filterEvents} />
         <Popup />
