@@ -21,12 +21,16 @@ class Popup extends React.Component {
   handleFillForm = (e) => {
     let { name, value } = e.target;
     this.setState({
-
       [name]: value,
     });
 
-    console.log(this.state)
   };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.events.push(this.state)
+  }
+
 
   render() {
     return (
@@ -34,7 +38,9 @@ class Popup extends React.Component {
         <div className="pop-up__close">
           <FontAwesomeIcon icon={faTimes} onClick={this.props.hidePopUp} />
         </div>
-        <form className='pop-up__form' action="">
+        <form
+          onSubmit={this.handleSubmit}
+          className='pop-up__form' action="">
           <input
             autoComplete="off"
             className="pop-up__title"

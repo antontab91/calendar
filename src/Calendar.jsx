@@ -60,17 +60,19 @@ class Calendar extends React.Component {
   //   const { events } = this.state;
 
   //   setTimeout(() => {
-  //     this.setState({
-  //       events: [...events, {
-  //         id: '2020-07-14T19:30:00+03:00',
-  //         date: '2020-07-14T19:30:00+03:00',
-  //         title: 'сходить в магазин',
-  //         description: 'снять капусту, сходить в сильпо'
-  //       }]
-  //     });
+  // this.setState({
+  //   events: [...events, {
+  //     id: '2020-07-14T19:30:00+03:00',
+  //     date: '2020-07-14T19:30:00+03:00',
+  //     title: 'сходить в магазин',
+  //     description: 'снять капусту, сходить в сильпо'
+  //   }]
+  // });
 
   //   }, 5000);
   // }
+
+
 
   goToNextWeek = () => {
     const { viewedDate } = this.state;
@@ -133,6 +135,7 @@ class Calendar extends React.Component {
           events={filterEvents}
         />
         <Popup
+          events={events}
           popupIsShow={popupIsShow}
           hidePopUp={this.hidePopUp}
         />
