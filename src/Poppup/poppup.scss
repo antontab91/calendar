@@ -3,7 +3,7 @@ $blue: #1a73e8;
 $black:#454648;
 
 .pop-up{
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -16,16 +16,12 @@ $black:#454648;
   height: 450px;
   box-shadow: 3px 10px 20px rgb(190, 187, 187);
   border-radius: 10px;
-  padding: 20px;
+  padding: 50px 20px 0;
 
-  
-
-  & input{
-    border: none;
+  & input{    
     background: transparent;
     width: 100%;
     
-
     &:focus{
       outline: none;
     }
@@ -34,10 +30,11 @@ $black:#454648;
   &__close{
     width: fit-content;
     font-size: 20px;
+    top: 20px;
     right: 20px;
     position: absolute;
     cursor: pointer;
-    
+  
     &:hover{
       transform: rotate(180deg);
       transition: all ease-in-out .3s;
@@ -46,13 +43,74 @@ $black:#454648;
   }
 
   &__form-wr{
-    display: flex;
-    
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
   }
   .form-control{
    
   }
 
+ &__title{
+   border: none;
+   border-bottom: 4px solid $black;
+   margin-bottom: 20px;
+   font-size: 40px;
+   transition: all ease-in-out 0.3s;
+  font-family: Roboto, Arial, sans-serif;
+  color: $black;
+
+   &:focus{
+    border-bottom: 4px solid $blue;
+   }
+ }
+
+ &__time-set{
+     border: none ;
+     font-size: 20px;
+     height: 40px;
+    //  border-bottom: 2px solid $black;
+     margin-right: 15px;
+     margin-bottom: 20px;
+     letter-spacing: 2px;
+     cursor: pointer;
+     position: relative;
+     
+     &::before{
+       content: '';
+       transition: all ease-in-out .5s;
+       position: absolute;
+       bottom: 0;
+       height: 5px;
+       width: 0px;
+       background: $black;
+     }
+
+     &:focus, &:hover{
+       color: $blue;
+       &::before{
+       content: '';
+       position: absolute;
+       bottom: 0;
+       height: 2px;
+       width: 100%;
+       background: $blue;
+     }
+     }
+   }
+
+   &__date{
+     max-width: 245px;
+   }
+
+   &__startTime{
+      max-width: 100px;
+   }
+
+   &__endTime{
+     max-width: 100px;
+      }
 }
 // ::-webkit-datetime-edit { padding: 1em; }
 // ::-webkit-datetime-edit-fields-wrapper { background: silver; }
@@ -61,6 +119,9 @@ $black:#454648;
 // ::-webkit-datetime-edit-day-field { color: green; }
 // ::-webkit-datetime-edit-year-field { color: purple; }
 // ::-webkit-inner-spin-button { display: none; }
-// ::-webkit-calendar-picker-indicator { background: orange; }
+::-webkit-calendar-picker-indicator { 
+ 
+  cursor: pointer;
+}
 
 

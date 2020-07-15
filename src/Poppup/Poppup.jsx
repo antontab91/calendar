@@ -27,10 +27,12 @@ class Popup extends React.Component {
         </div>
         <form className='pop-up__form' action="">
           <input
+            autocomplete="off"
             className="pop-up__title"
             type="text"
             name="title"
             placeholder="Add Title"
+
           />
           <div className="pop-up__form-wr">
 
