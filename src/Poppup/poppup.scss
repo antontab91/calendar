@@ -96,7 +96,7 @@ $black:#454648;
        height: 2px;
        width: 100%;
        background: $blue;
-     }
+      }
      }
    }
 
@@ -110,7 +110,9 @@ $black:#454648;
 
    &__endTime{
      max-width: 100px;
-      }
+  }
+
+  
 }
 // ::-webkit-datetime-edit { padding: 1em; }
 // ::-webkit-datetime-edit-fields-wrapper { background: silver; }
