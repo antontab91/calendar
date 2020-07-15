@@ -4,8 +4,6 @@ import { faTimes, faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-
-
 class Popup extends React.Component {
 
   constructor(props) {
