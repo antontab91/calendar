@@ -97,7 +97,7 @@ class Calendar extends React.Component {
   };
 
   render() {
-    const { currDate, viewedDate, events } = this.state;
+    const { currDate, viewedDate, events, popupIsShow } = this.state;
 
     const filterEvents = events.filter((event) => moment(event.date).isSame(viewedDate, 'isoWeek'));  // тут отфильтровал СОБЫТИЯ по текущей неделе , для того чтобы показывало ивенты только текущей недели 
 
@@ -105,7 +105,7 @@ class Calendar extends React.Component {
 
 
     return (
-      <div className="calendar">
+      <div className={`calendar ${this.props.popupIsShow ? 'show' : 'hide'}`}>
         <Header
           currDate={currDate}                      // текущая дата в формате 2020-07-14T15:51:55+03:00
           viewedDate={viewedDate}                   // показываемая дата в том же формате 
@@ -118,8 +118,10 @@ class Calendar extends React.Component {
           viewedDate={viewedDate}
           events={filterEvents}
         />
-        <Popup />
-      </div>
+        <Popup
+          popupIsShow={popupIsShow}
+        />
+      </div >
     )
   }
 }
