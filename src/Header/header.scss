@@ -18,6 +18,11 @@ $black:#454648;
   }
 }
 
+.header.show{
+    background-color: rgb(146, 137, 137);
+    pointer-events: none;
+}
+
 .header-navigatin{
   border-bottom: 2px solid #dbdce0;
 

@@ -14,13 +14,15 @@ class Header extends React.Component {
             goToNextWeek,
             goToPrevWeek,
             goToCurrent,
+            showPopUp,
+            popupIsShow,
         } = this.props;
 
         return (
-            <header className="header">
+            <header className={`header ${popupIsShow ? 'show' : 'hide'}`}>
                 <nav className="header-navigatin">
                     <div className="header-navigatin__wr">
-                        <AddButton />
+                        <AddButton showPopUp={showPopUp} />
                         <CurrentDate goToCurrent={goToCurrent} />
                         <MonthNavigation
                             viewedDate={viewedDate}

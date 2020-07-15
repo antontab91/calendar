@@ -96,6 +96,18 @@ class Calendar extends React.Component {
     });
   };
 
+  showPopUp = () => {
+    this.setState({
+      popupIsShow: true,
+    })
+  }
+
+  hidePopUp = () => {
+    this.setState({
+      popupIsShow: false,
+    })
+  }
+
   render() {
     const { currDate, viewedDate, events, popupIsShow } = this.state;
 
@@ -105,8 +117,10 @@ class Calendar extends React.Component {
 
 
     return (
-      <div className={`calendar ${this.props.popupIsShow ? 'show' : 'hide'}`}>
+      <div className={`calendar ${this.state.popupIsShow ? 'show' : 'hide'}`}>
         <Header
+          popupIsShow={popupIsShow}
+          showPopUp={this.showPopUp}
           currDate={currDate}                      // текущая дата в формате 2020-07-14T15:51:55+03:00
           viewedDate={viewedDate}                   // показываемая дата в том же формате 
           goToNextWeek={this.goToNextWeek}          // + неделя
@@ -120,6 +134,7 @@ class Calendar extends React.Component {
         />
         <Popup
           popupIsShow={popupIsShow}
+          hidePopUp={this.hidePopUp}
         />
       </div >
     )

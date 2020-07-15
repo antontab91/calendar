@@ -23,11 +23,11 @@ class Popup extends React.Component {
     return (
       <div className={`pop-up ${this.props.popupIsShow ? 'show' : 'hide'}`}>
         <div className="pop-up__close">
-          <FontAwesomeIcon icon={faTimes} />
+          <FontAwesomeIcon icon={faTimes} onClick={this.props.hidePopUp} />
         </div>
         <form className='pop-up__form' action="">
           <input
-            autocomplete="off"
+            autoComplete="off"
             className="pop-up__title"
             type="text"
             name="title"
