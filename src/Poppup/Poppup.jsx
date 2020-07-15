@@ -71,7 +71,10 @@ class Popup extends React.Component {
             />
           </div>
 
-          <button className="submit-button" type="submit">Submit</button>
+          <div className="form-control btn-control">
+            <button className="pop-up__submit-button" type="submit">Submit</button>
+          </div>
+
         </form>
       </div>
     )
