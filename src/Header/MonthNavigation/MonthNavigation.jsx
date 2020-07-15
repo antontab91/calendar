@@ -1,6 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 import './monthNavigation.scss';
+import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const MounthNavigation = ({
   viewedDate,
@@ -25,10 +27,10 @@ const MounthNavigation = ({
     <div className="mounth-navigation">
       <div className="mounth-navigation__btns-wr">
         <button className="mounth-navigation__btn-left mounth-navigation__btn" onClick={goToPrevWeek}>
-          {"<"}
+          <FontAwesomeIcon icon={faChevronLeft} />
         </button>
         <button className="mounth-navigation__btn-right mounth-navigation__btn" onClick={goToNextWeek}>
-          {">"}
+          <FontAwesomeIcon icon={faChevronRight} />
         </button>
       </div>
       <div className="mounth-navigation__current-mounth">

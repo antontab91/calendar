@@ -1,4 +1,5 @@
 import React from 'react';
+import './poppup.scss'
 
 class Popup extends React.Component {
 

@@ -11,8 +11,8 @@ $black:#454648;
 
   &__day{
     flex-basis: 100%;
-    
-    &:first-child{
+
+    :first-child{
       border-top: none;
     }
   }
@@ -22,7 +22,7 @@ $black:#454648;
     height: 90px;
     border-top: 1px solid $black;
     border-left: 1px solid $black;
-      min-width: 95px;
+    min-width: 95px;
   }
 }
 
