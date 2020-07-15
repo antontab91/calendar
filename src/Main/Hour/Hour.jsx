@@ -3,7 +3,7 @@ import moment from 'moment';
 
 import RedLine from '../RedLine/RedLine';
 import Event from '../Event/Event';
-import './hour.scss';
+// import './hour.scss';
 
 
 class Hour extends React.Component {

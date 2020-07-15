@@ -11,7 +11,11 @@ const RedLine = ({ hour, currDate }) => {
   const percentOfHour = (diff / 60 * 100).toFixed(0);
 
 
-  return (<div style={{ top: `${percentOfHour}%` }} className="red-line"> red line </div>)
+  return (
+    <div style={{ top: `${percentOfHour}%` }} className="red-line">
+      red line
+      <div className="red-line__orb"></div>
+    </div>)
 
 }
 

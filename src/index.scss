@@ -38,27 +38,3 @@ button{
 
 
 
-
-.table{
-  width: 100%;
-  &__week{
-    display: flex;
-    width: 100%;
-  }
-
-  &__day{
-    flex-basis: 100%;
-
-    :first-child{
-      border-top: none;
-    }
-  }
-  
-  &__hour{
-    height: 90px;
-    border-top: 1px solid $black;
-    border-left: 1px solid $black;
-      min-width: 95px;
-  }
-}
-
