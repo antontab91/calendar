@@ -22,19 +22,34 @@ class Popup extends React.Component {
             placeholder="Add Title"
           />
           <div className="pop-up__form-wr">
+
             <div className="form-control">
-              <input type="date" />
+              <input
+                type="date"
+                name="date"
+              />
             </div>
+
             <div className="form-control">
-              <input type="time" />
+              <input
+                type="time"
+                name="startTime"
+              />
             </div>
+
             <div className="form-control">
-              <input type="time" />
+              <input
+                className=""
+                type="time"
+                name="endTime"
+              />
             </div>
+
           </div>
+
           <div className="form-control">
             <textarea
-              className='pop-up__textarea'
+              className='pop-up__description'
               type="description"
               name="description"
               placeholder="Please add description"
