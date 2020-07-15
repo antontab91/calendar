@@ -8,6 +8,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Popup extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      id: '',
+      date: '',
+      title: '',
+      description: '',
+    }
+  }
+
   render() {
     return (
       <div className={`pop-up ${this.props.popupIsShow ? 'show' : 'hide'}`}>
@@ -25,6 +36,7 @@ class Popup extends React.Component {
 
             <div className="form-control">
               <input
+                className="pop-up__time-set pop-up__date"
                 type="date"
                 name="date"
               />
@@ -32,6 +44,7 @@ class Popup extends React.Component {
 
             <div className="form-control">
               <input
+                className="pop-up__time-set pop-up__startTime"
                 type="time"
                 name="startTime"
               />
@@ -39,7 +52,7 @@ class Popup extends React.Component {
 
             <div className="form-control">
               <input
-                className=""
+                className="pop-up__time-set pop-up__endTime"
                 type="time"
                 name="endTime"
               />
