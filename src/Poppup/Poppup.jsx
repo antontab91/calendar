@@ -19,6 +19,17 @@ class Popup extends React.Component {
     }
   }
 
+
+  handleFillForm = (e) => {
+    let { name, value } = e.target;
+    this.setState({
+
+      [name]: value,
+    });
+
+    console.log(this.state)
+  };
+
   render() {
     return (
       <div className={`pop-up ${this.props.popupIsShow ? 'show' : 'hide'}`}>
@@ -32,6 +43,7 @@ class Popup extends React.Component {
             type="text"
             name="title"
             placeholder="Add Title"
+            onChange={this.handleFillForm}
 
           />
           <div className="pop-up__form-wr">
@@ -41,6 +53,7 @@ class Popup extends React.Component {
                 className="pop-up__time-set pop-up__date"
                 type="date"
                 name="date"
+                onChange={this.handleFillForm}
               />
             </div>
 
@@ -49,6 +62,7 @@ class Popup extends React.Component {
                 className="pop-up__time-set pop-up__startTime"
                 type="time"
                 name="startTime"
+                onChange={this.handleFillForm}
               />
             </div>
 
@@ -57,6 +71,7 @@ class Popup extends React.Component {
                 className="pop-up__time-set pop-up__endTime"
                 type="time"
                 name="endTime"
+                onChange={this.handleFillForm}
               />
             </div>
 
@@ -68,6 +83,7 @@ class Popup extends React.Component {
               type="description"
               name="description"
               placeholder="Please add description"
+              onChange={this.handleFillForm}
             />
           </div>
 
