@@ -24,6 +24,7 @@ class Calendar extends React.Component {
       events: [{
         id: '2020-07-14T15:30:00+03:00',
         date: '2020-07-14T15:30:00+03:00',
+
         title: 'ДР Андрея',
         description: 'нужно поздравить'
       },
