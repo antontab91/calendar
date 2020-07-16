@@ -2,6 +2,7 @@ import React from 'react';
 import './poppup.scss';
 import { faTimes, faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { now } from 'moment';
 
 
 class Popup extends React.Component {
@@ -10,18 +11,23 @@ class Popup extends React.Component {
     super(props);
 
     this.state = {
-      id: '',
+      id: Date.now(),
       date: '',
       title: '',
       description: '',
+      startTime: '',
+      startTime: '',
     }
   }
 
 
   handleFillForm = (e) => {
     let { name, value } = e.target;
+
+
+
     this.setState({
-      [name]: value,
+      [name]: value
     });
 
   };
@@ -29,6 +35,7 @@ class Popup extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.events.push(this.state)
+    console.log(this.props.events)
   }
 
 
@@ -49,6 +56,7 @@ class Popup extends React.Component {
             placeholder="Add Title"
             onChange={this.handleFillForm}
 
+
           />
           <div className="pop-up__form-wr">
 
@@ -58,6 +66,7 @@ class Popup extends React.Component {
                 type="date"
                 name="date"
                 onChange={this.handleFillForm}
+                value={this.state.date}
               />
             </div>
 
@@ -67,6 +76,7 @@ class Popup extends React.Component {
                 type="time"
                 name="startTime"
                 onChange={this.handleFillForm}
+                value={this.state.startTime}
               />
             </div>
 
@@ -76,6 +86,7 @@ class Popup extends React.Component {
                 type="time"
                 name="endTime"
                 onChange={this.handleFillForm}
+                value={this.state.endTime}
               />
             </div>
 
@@ -88,6 +99,7 @@ class Popup extends React.Component {
               name="description"
               placeholder="Please add description"
               onChange={this.handleFillForm}
+              value={this.state.description}
             />
           </div>
 

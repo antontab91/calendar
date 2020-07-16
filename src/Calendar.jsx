@@ -24,7 +24,12 @@ class Calendar extends React.Component {
       events: [{
         id: '2020-07-14T15:30:00+03:00',
         date: '2020-07-14T15:30:00+03:00',
-
+        title: 'ДР Андрея',
+        description: 'нужно поздравить'
+      },
+      {
+        id: '2020-07-15T15:30:00+03:00',
+        date: '2020-07-15T15:30:00+03:00',
         title: 'ДР Андрея',
         description: 'нужно поздравить'
       },
@@ -41,6 +46,39 @@ class Calendar extends React.Component {
         description: 'нужно поздравить родителей Пети'
       }
       ]
+      // events: [{
+      //   id: '2020-07-14T15:30:00+03:00',
+      //   date: '2020-07-14',
+      //   startTime: '15:30',
+      //   startTime: '16:30',
+      //   title: 'ДР Андрея',
+      //   description: 'нужно поздравить'
+      // },
+      // {
+      //   id: '2020-07-15T15:30:00+03:00',
+      //   date: '2020-07-15',
+      //   startTime: '15:30',
+      //   startTime: '16:30',
+      //   title: 'ДР Андрея',
+      //   description: 'нужно поздравить'
+      // },
+      // {
+      //   id: '2020-07-14T16:30:00+03:00',
+      //   date: '2020-07-14',
+      //   startTime: '16:30',
+      //   startTime: '17:30',
+      //   title: 'ДР Андрея2',
+      //   description: 'нужно поздравить2'
+      // },
+      // {
+      //   id: '2020-07-21T15:51:55+03:00',
+      //   date: '2020-07-21',
+      //   startTime: '15:51',
+      //   startTime: '16:51',
+      //   title: 'ДР Пети',
+      //   description: 'нужно поздравить родителей Пети'
+      // }
+      // ]
     }
   }
 
@@ -115,7 +153,8 @@ class Calendar extends React.Component {
     const { currDate, viewedDate, events, popupIsShow } = this.state;
 
     const filterEvents = events.filter((event) => moment(event.date).isSame(viewedDate, 'isoWeek'));  // тут отфильтровал СОБЫТИЯ по текущей неделе , для того чтобы показывало ивенты только текущей недели 
-
+    console.log(moment(`2020-07-14 15:30`))
+    console.log(moment(`2020-07-14T15:30:00+03:00`))
     console.log('filterEvents', filterEvents)
 
 
