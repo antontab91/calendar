@@ -153,9 +153,9 @@ class Calendar extends React.Component {
     const { currDate, viewedDate, events, popupIsShow } = this.state;
 
     const filterEvents = events.filter((event) => moment(event.date).isSame(viewedDate, 'isoWeek'));  // тут отфильтровал СОБЫТИЯ по текущей неделе , для того чтобы показывало ивенты только текущей недели 
-    console.log(moment(`2020-07-14 15:30`))
-    console.log(moment(`2020-07-14T15:30:00+03:00`))
-    console.log('filterEvents', filterEvents)
+    // console.log(moment(`2020-07-14 15:30`))
+    // console.log(moment(`2020-07-14T15:30:00+03:00`))
+    // console.log('filterEvents', filterEvents)
 
 
     return (
