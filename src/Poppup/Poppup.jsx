@@ -10,7 +10,7 @@ class Popup extends React.Component {
     super(props);
 
     this.state = {
-      id: new Date(),
+      id: '',
       date: '',
       title: '',
       description: '',
