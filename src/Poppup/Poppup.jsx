@@ -55,6 +55,8 @@ class Popup extends React.Component {
             name="title"
             placeholder="Add Title"
             onChange={this.handleFillForm}
+            value={this.state.title}
+
 
 
           />
