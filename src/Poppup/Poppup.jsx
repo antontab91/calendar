@@ -16,16 +16,13 @@ class Popup extends React.Component {
       title: '',
       description: '',
       startTime: '',
-      startTime: '',
+      endTime: '',
     }
   }
 
 
   handleFillForm = (e) => {
     let { name, value } = e.target;
-
-
-
     this.setState({
       [name]: value
     });
