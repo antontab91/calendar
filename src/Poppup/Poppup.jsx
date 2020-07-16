@@ -2,7 +2,7 @@ import React from 'react';
 import './poppup.scss';
 import { faTimes, faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { now } from 'moment';
+
 
 
 class Popup extends React.Component {
@@ -53,12 +53,8 @@ class Popup extends React.Component {
             placeholder="Add Title"
             onChange={this.handleFillForm}
             value={this.state.title}
-
-
-
           />
           <div className="pop-up__form-wr">
-
             <div className="form-control">
               <input
                 className="pop-up__time-set pop-up__date"
@@ -68,7 +64,6 @@ class Popup extends React.Component {
                 value={this.state.date}
               />
             </div>
-
             <div className="form-control">
               <input
                 className="pop-up__time-set pop-up__startTime"
@@ -78,7 +73,6 @@ class Popup extends React.Component {
                 value={this.state.startTime}
               />
             </div>
-
             <div className="form-control">
               <input
                 className="pop-up__time-set pop-up__endTime"
@@ -88,9 +82,7 @@ class Popup extends React.Component {
                 value={this.state.endTime}
               />
             </div>
-
           </div>
-
           <div className="form-control">
             <textarea
               className='pop-up__description'
@@ -101,11 +93,9 @@ class Popup extends React.Component {
               value={this.state.description}
             />
           </div>
-
           <div className="form-control btn-control">
             <button className="pop-up__submit-button" type="submit">Submit</button>
           </div>
-
         </form>
       </div>
     )
