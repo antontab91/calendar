@@ -11,14 +11,11 @@ class Calendar extends React.Component {
 
     // const today = moment().startOf('day').format(); // текущая дата с нулевым временем такой формат 2020-07-14T15:51:55+03:00
     const today = moment().format(); // текущая дата  
-    // const baseUrl = 'https://5eb321a1974fee0016ecd32b.mockapi.io/users';
     this.state = {
       currDate: today,
       viewedDate: today,                                    // просматриваемая неделя , по дефолту от текущей даты 
       // viewedDate: today.startOf('isoWeek').format()      // начало недели 
-
       popupIsShow: false,
-
 
       timeFormData: {
         id: Date.now(),
@@ -29,72 +26,8 @@ class Calendar extends React.Component {
         endTime: '',
       },
 
-      events: [{
-        id: '2020-07-14T15:30:00+03:00',
-        date: '2020-07-14T15:30:00+03:00',
-        title: 'ДР Андрея',
-        description: 'нужно поздравить'
-      },
-      {
-        id: '2020-07-14T15:30:00+03:00',
-        date: '2020-07-14',
-        startTime: '12:30',
-        endTime: '16:30',
-        title: 'ДР Андрея',
-        description: 'нужно поздравить'
-      },
-      {
-        id: '2020-07-15T15:30:00+03:00',
-        date: '2020-07-15T15:30:00+03:00',
-        title: 'ДР Андрея',
-        description: 'нужно поздравить'
-      },
-      {
-        id: '2020-07-14T16:30:00+03:00',
-        date: '2020-07-14T16:30:00+03:00',
-        title: 'ДР Андрея2',
-        description: 'нужно поздравить2'
-      },
-      {
-        id: '2020-07-21T15:51:55+03:00',
-        date: '2020-07-21T15:51:55+03:00',
-        title: 'ДР Пети',
-        description: 'нужно поздравить родителей Пети'
-      }
+      events: [
       ],
-      // events: [{
-      //   id: '2020-07-14T15:30:00+03:00',
-      //   date: '2020-07-14',
-      //   startTime: '15:30',
-      //   startTime: '16:30',
-      //   title: 'ДР Андрея',
-      //   description: 'нужно поздравить'
-      // },
-      // {
-      //   id: '2020-07-15T15:30:00+03:00',
-      //   date: '2020-07-15',
-      //   startTime: '15:30',
-      //   endTime: '16:30',
-      //   title: 'ДР Андрея',
-      //   description: 'нужно поздравить'
-      // },
-      // {
-      //   id: '2020-07-14T16:30:00+03:00',
-      //   date: '2020-07-14',
-      //   startTime: '16:30',
-      //   endTime: '17:30',
-      //   title: 'ДР Андрея2',
-      //   description: 'нужно поздравить2'
-      // },
-      // {
-      //   id: '2020-07-21T15:51:55+03:00',
-      //   date: '2020-07-21',
-      //   startTime: '15:51',
-      //   endTime: '16:51',
-      //   title: 'ДР Пети',
-      //   description: 'нужно поздравить родителей Пети'
-      // }
-      // ],
     }
   }
 
@@ -108,23 +41,15 @@ class Calendar extends React.Component {
   //     title: 'ДР Андрея',
   //       description: 'нужно поздравить'
   // }
-
   // }
 
-  // componentDidMount() {
-  //   const { events } = this.state;
-  //   // console.log('1')
+  componentDidMount() {
+    this.fetchEvents();
+  }
 
-  //   setTimeout(() => {
-
-  //     getEventsList().then((events) =>
-  //       this.setState({
-  //         events,
-  //       })
-  //     )
-  //   }, 500);
-  // }
-
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.events === this.state.events) this.fetchEvents();
+  }
 
 
   goToNextWeek = () => {
@@ -178,14 +103,6 @@ class Calendar extends React.Component {
     // this.state.events.push(this.state.timeFormData)
     createEvent(this.state.timeFormData).then(getEventsList())
     console.log(this.state.events)
-  }
-
-  componentDidMount() {
-    this.fetchEvents();
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.events === this.state.events) this.fetchEvents();
   }
 
   fetchEvents = () =>
