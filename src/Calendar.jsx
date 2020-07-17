@@ -98,6 +98,10 @@ class Calendar extends React.Component {
       })
     );
 
+  handleDeleteEvent = (id) => {
+    deleteEvent(id).then(() => this.fetchEvents());
+  };
+
   render() {
     const { currDate, viewedDate, events, popupIsShow, timeFormData } = this.state;
 
@@ -107,9 +111,9 @@ class Calendar extends React.Component {
       <div className={`calendar ${this.state.popupIsShow ? 'show' : 'hide'}`}>
         <Header
           popupIsShow={popupIsShow}
-          showPopUp={this.showPopUp}
           currDate={currDate}                      // текущая дата в формате 2020-07-14T15:51:55+03:00
           viewedDate={viewedDate}                   // показываемая дата в том же формате 
+          showPopUp={this.showPopUp}
           goToNextWeek={this.goToNextWeek}
           goToPrevWeek={this.goToPrevWeek}
           goToCurrent={this.goToCurrent}
@@ -118,11 +122,12 @@ class Calendar extends React.Component {
           currDate={currDate}
           viewedDate={viewedDate}
           events={filterEvents}
+          handleDeleteEvent={this.handleDeleteEvent}
         />
         <Popup
           popupIsShow={popupIsShow}
-          hidePopUp={this.hidePopUp}
           timeFormData={timeFormData}
+          hidePopUp={this.hidePopUp}
           handleFillForm={this.handleFillForm}
           handleSubmit={this.handleSubmit}
         />
