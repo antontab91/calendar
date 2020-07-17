@@ -11,9 +11,7 @@ const MounthNavigation = ({
 }) => {
 
   const weekStart = moment(viewedDate).startOf('isoWeek'); // определяем начало просматривоемой недели ( например Mon Jul 13 2020 00:00:00 GMT+0300)
-  const weekEnd = moment(viewedDate).endOf('isoWeek');      // конец начало просматривоемой недели
-
-  console.log(`начало просматриваемой недели ${weekStart}`)
+  const weekEnd = moment(viewedDate).endOf('isoWeek');      // конец просматривоемой недели
 
   let title;
 

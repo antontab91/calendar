@@ -4,8 +4,8 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const AddButton = ({ showPopUp }) => {
-  return (
 
+  return (
     <button onClick={showPopUp} className="add-btn">
       <div className="add-btn__wr">
         <span className="add-btn__icon">

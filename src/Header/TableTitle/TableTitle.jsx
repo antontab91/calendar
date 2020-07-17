@@ -1,24 +1,11 @@
 import React from 'react';
 import moment from "moment";
-import cn from "classnames";
-
 import { getRangeOfDaysByDate } from "../../utilites";
 import './tableTitle.scss';
 
-// const today = Date.now();                                         // Андрей или Вася ! если вы это читаете , я не удаляю закомиченное . тк мне так легче, это первый мой проэкт на реакт . я путался пока не стал прописывать то что сделал в коментах 
-// const week = ['SUN', 'MUN', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-
-
-// const TableNavigation = ({ week, today }) => {
 const TableNavigation = ({ currDate, viewedDate }) => {
 
-  const week = getRangeOfDaysByDate(viewedDate);      // 
-
-  console.log({
-    week,
-    currDate,
-    viewedDate
-  })
+  const week = getRangeOfDaysByDate(viewedDate);
 
   return (
     <div className="table-navigation">
@@ -41,7 +28,6 @@ const TableNavigation = ({ currDate, viewedDate }) => {
           )
         })}
       </nav>
-
     </div >
   )
 }

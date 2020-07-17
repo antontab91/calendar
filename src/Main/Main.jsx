@@ -5,36 +5,31 @@ import Day from './Day/Day.jsx';
 import Sidebar from './Sidebar/Sidebar.jsx';
 import './main.scss';
 
+const Main = ({ currDate, viewedDate, events }) => {
 
+    const days = getRangeOfDaysByDate(viewedDate);  // массив дней
 
-class Main extends React.Component {
+    return (
+        <div className="main">
+            <Sidebar />
+            <div className="table">
+                <div className="table__week">
+                    {
+                        days.map((day) => {
 
-    render() {
-        const { currDate, viewedDate, events } = this.props;
-
-        const days = getRangeOfDaysByDate(viewedDate);  // массив дней
-        console.log(events);
-
-
-        return (
-            <div className="main">
-                <Sidebar />
-                <div className="table">
-                    <div className="table__week">
-                        {
-                            days.map((day) => {
-                                const filteredEvents = events.filter(event => moment(new Date(`${event.date} ${event.startTime}`)).isSame(day, 'day'))
-
-                                return (
-                                    <Day key={day} day={day} currDate={currDate} events={filteredEvents} />
-                                )
+                            const filteredEvents = events.filter((event) => {
+                                return moment(new Date(`${event.date} ${event.startTime}`)).isSame(day, 'day')
                             })
-                        }
-                    </div>
+
+                            return (
+                                <Day key={day} day={day} currDate={currDate} events={filteredEvents} />
+                            )
+                        })
+                    }
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default Main;

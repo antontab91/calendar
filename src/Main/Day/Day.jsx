@@ -1,34 +1,27 @@
 import React from 'react';
 import moment from 'moment';
-
 import Hour from '../Hour/Hour.jsx'
 import { getRangeOfHoursByDate } from '../../utilites';
 
 
+const Day = ({ day, currDate, events }) => {
 
-class Day extends React.Component {
-  render() {
-    const { day, viewedDate, currDate, events } = this.props;
+  const hours = getRangeOfHoursByDate(day);
 
-    const hours = getRangeOfHoursByDate(day);
+  return (
+    <div className="table__day">
+      {
+        hours.map((hour) => {
+          const filteredEvents = events.filter(event => moment(new Date(`${event.date} ${event.startTime}`)).isSame(hour, 'hours'));
 
-    console.log('day', { hours, events })
+          return (
+            <Hour key={hour} hour={hour} currDate={currDate} events={filteredEvents} />
+          )
+        })
+      }
+    </div>
+  );
 
-
-    return (
-      <div className="table__day">
-        {
-          hours.map((hour) => {
-            const filteredEvents = events.filter(event => moment(new Date(`${event.date} ${event.startTime}`)).isSame(hour, 'hours'));
-
-            return (
-              <Hour key={hour} hour={hour} currDate={currDate} events={filteredEvents} />
-            )
-          })
-        }
-      </div>
-    );
-  }
 }
 
 export default Day;
