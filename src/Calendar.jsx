@@ -3,6 +3,7 @@ import moment from 'moment';
 import Header from './Header/Header.jsx';
 import Main from './Main/Main.jsx';
 import Popup from './Poppup/Poppup.jsx';
+import { getEventsList, deleteEvent, createEvent } from "./eventsGateWays.js";
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -10,13 +11,14 @@ class Calendar extends React.Component {
 
     // const today = moment().startOf('day').format(); // текущая дата с нулевым временем такой формат 2020-07-14T15:51:55+03:00
     const today = moment().format(); // текущая дата  
-
+    // const baseUrl = 'https://5eb321a1974fee0016ecd32b.mockapi.io/users';
     this.state = {
       currDate: today,
       viewedDate: today,                                    // просматриваемая неделя , по дефолту от текущей даты 
       // viewedDate: today.startOf('isoWeek').format()      // начало недели 
 
       popupIsShow: false,
+
 
       timeFormData: {
         id: Date.now(),
@@ -64,7 +66,7 @@ class Calendar extends React.Component {
       //   id: '2020-07-14T15:30:00+03:00',
       //   date: '2020-07-14',
       //   startTime: '15:30',
-      //   endTime: '16:30',
+      //   startTime: '16:30',
       //   title: 'ДР Андрея',
       //   description: 'нужно поздравить'
       // },
@@ -111,20 +113,27 @@ class Calendar extends React.Component {
 
   // componentDidMount() {
   //   const { events } = this.state;
+  //   // console.log('1')
 
   //   setTimeout(() => {
-  // this.setState({
-  //   events: [...events, {
-  //     id: '2020-07-14T19:30:00+03:00',
-  //     date: '2020-07-14T19:30:00+03:00',
-  //     title: 'сходить в магазин',
-  //     description: 'снять капусту, сходить в сильпо'
-  //   }]
-  // });
 
-  //   }, 5000);
+  //     getEventsList().then((events) =>
+  //       this.setState({
+  //         events,
+  //       })
+  //     )
+  //   }, 500);
   // }
 
+
+
+  componentDidMount() {
+    this.fetchEvents();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.events === this.state.events) this.fetchEvents();
+  }
 
 
   goToNextWeek = () => {
@@ -175,9 +184,21 @@ class Calendar extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.state.events.push(this.state.timeFormData)
+    // this.state.events.push(this.state.timeFormData)
+    createEvent(this.state.timeFormData).then(getEventsList())
     console.log(this.state.events)
   }
+
+
+  fetchEvents = () =>
+    getEventsList().then((events) =>
+      this.setState({
+        events,
+      })
+    );
+  handleDeleteEvent = (id) => {
+    deleteEvent(id).then(() => this.fetchEvents());
+  };
 
   render() {
     const { currDate, viewedDate, events, popupIsShow, timeFormData } = this.state;
