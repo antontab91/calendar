@@ -1,3 +1,7 @@
+$blue: #1a73e8;
+$black:#454648;
+
+
 .event {
   position: absolute;
   left: 0;
@@ -8,11 +12,52 @@
   z-index: 1;
   border-radius: 5px;
   padding: 5px;
-  
+  transition: all ease-in-out 0.3s;
+  font-size: 15px;
+
+  &__delete{
+    position: absolute;
+    width: 100%;    
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    height: 35px;
+    left: 20%;
+    bottom: -35px;
+    font-size: 25px;
+    width:  200px;
+    cursor: pointer;
+    display: none;
+    box-shadow: 1px 1px 10px $black;
+    text-transform: capitalize;
+
+    &:hover{
+      transition: all ease-in-out 0.3s;
+      background: rgb(191, 191, 206);
+      
+    }
+  }
+
   div{
     white-space: nowrap; 
     text-overflow: ellipsis;
-   
     overflow: hidden;
+    padding: 2px;
   }
 }
+
+.event:hover{
+    width: 120%;
+    height: 120%;
+    background: $blue;
+    color: white;
+    z-index: 1;
+
+   .event__delete{
+       display: flex;
+       color: $black;
+     }
+  }

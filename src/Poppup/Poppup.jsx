@@ -12,8 +12,8 @@ const Popup = ({ popupIsShow, hidePopUp, handleSubmit, handleFillForm, timeFormD
         <FontAwesomeIcon icon={faTimes} onClick={hidePopUp} />
       </div>
       <form
-        onSubmit={() => {
-          handleSubmit();
+        onSubmit={(e) => {
+          handleSubmit(e);
           hidePopUp();
         }}
         className='pop-up__form' action="">
