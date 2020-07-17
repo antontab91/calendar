@@ -127,15 +127,6 @@ class Calendar extends React.Component {
 
 
 
-  componentDidMount() {
-    this.fetchEvents();
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.events === this.state.events) this.fetchEvents();
-  }
-
-
   goToNextWeek = () => {
     const { viewedDate } = this.state;
 
@@ -189,6 +180,13 @@ class Calendar extends React.Component {
     console.log(this.state.events)
   }
 
+  componentDidMount() {
+    this.fetchEvents();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.events === this.state.events) this.fetchEvents();
+  }
 
   fetchEvents = () =>
     getEventsList().then((events) =>
@@ -196,9 +194,6 @@ class Calendar extends React.Component {
         events,
       })
     );
-  handleDeleteEvent = (id) => {
-    deleteEvent(id).then(() => this.fetchEvents());
-  };
 
   render() {
     const { currDate, viewedDate, events, popupIsShow, timeFormData } = this.state;
