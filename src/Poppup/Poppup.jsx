@@ -12,7 +12,10 @@ const Popup = ({ popupIsShow, hidePopUp, handleSubmit, handleFillForm, timeFormD
         <FontAwesomeIcon icon={faTimes} onClick={hidePopUp} />
       </div>
       <form
-        onSubmit={handleSubmit}
+        onSubmit={() => {
+          handleSubmit();
+          hidePopUp();
+        }}
         className='pop-up__form' action="">
         <input
           autoComplete="off"

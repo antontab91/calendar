@@ -34,6 +34,14 @@ class Calendar extends React.Component {
         description: 'нужно поздравить'
       },
       {
+        id: '2020-07-14T15:30:00+03:00',
+        date: '2020-07-14',
+        startTime: '12:30',
+        endTime: '16:30',
+        title: 'ДР Андрея',
+        description: 'нужно поздравить'
+      },
+      {
         id: '2020-07-15T15:30:00+03:00',
         date: '2020-07-15T15:30:00+03:00',
         title: 'ДР Андрея',
@@ -174,7 +182,7 @@ class Calendar extends React.Component {
   render() {
     const { currDate, viewedDate, events, popupIsShow, timeFormData } = this.state;
 
-    const filterEvents = events.filter((event) => moment(event.date).isSame(viewedDate, 'isoWeek'));  // тут отфильтровал СОБЫТИЯ по текущей неделе , для того чтобы показывало ивенты только текущей недели 
+    const filterEvents = events.filter((event) => moment(new Date(`${event.date} ${event.startTime}`)).isSame(viewedDate, 'isoWeek'));  // тут отфильтровал СОБЫТИЯ по текущей неделе , для того чтобы показывало ивенты только текущей недели 
     // '2020-07-21T15:51:55+03:00',
     // `2020-07-14T15:30`
     console.log(moment(`2020-07-14 15:30`).format())

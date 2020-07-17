@@ -23,7 +23,7 @@ class Main extends React.Component {
                     <div className="table__week">
                         {
                             days.map((day) => {
-                                const filteredEvents = events.filter(event => moment(event.date).isSame(day, 'day'))
+                                const filteredEvents = events.filter(event => moment(new Date(`${event.date} ${event.startTime}`)).isSame(day, 'day'))
 
                                 return (
                                     <Day key={day} day={day} currDate={currDate} events={filteredEvents} />

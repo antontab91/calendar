@@ -14,13 +14,13 @@ class Hour extends React.Component {
 
     const isActive = mHour.isSame(currDate, 'hour');
 
-    if (events.length > 0) {
-      console.log(events)
-    }
+    // if (events.length > 0) {
+    //   console.log(events)
+    // }
 
-    const diff = moment(currDate).diff(hour, 'minutes');
+    // const diff = moment(currDate).diff(hour, 'minutes');
 
-    const percentOfHour = (diff / 60 * 100).toFixed(0);
+    // const percentOfHour = (diff / 60 * 100).toFixed(0);
 
     return (
       <div className="table__hour" >

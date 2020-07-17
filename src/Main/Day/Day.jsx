@@ -19,7 +19,7 @@ class Day extends React.Component {
       <div className="table__day">
         {
           hours.map((hour) => {
-            const filteredEvents = events.filter(event => moment(event.date).isSame(hour, 'hours'));
+            const filteredEvents = events.filter(event => moment(new Date(`${event.date} ${event.startTime}`)).isSame(hour, 'hours'));
 
             return (
               <Hour key={hour} hour={hour} currDate={currDate} events={filteredEvents} />

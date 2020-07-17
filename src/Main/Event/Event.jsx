@@ -5,9 +5,9 @@ import './event.scss';
 
 
 const Event = ({ hour, event }) => {
-  const { date, title, description } = event;
+  const { date, title, description, startTime } = event;
 
-  const diff = moment(date).diff(hour, 'minutes');
+  const diff = moment(`${date} ${startTime}`).diff(hour, 'minutes');
 
   const percentOfHour = (diff / 60 * 100).toFixed(0);
 
