@@ -16,7 +16,6 @@ const RedLine = ({ hour, currDate }) => {
       red line
       <div className="red-line__orb"></div>
     </div>)
-
 }
 
 export default RedLine;

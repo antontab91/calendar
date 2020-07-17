@@ -10,75 +10,81 @@ class Calendar extends React.Component {
 
     // const today = moment().startOf('day').format(); // текущая дата с нулевым временем такой формат 2020-07-14T15:51:55+03:00
     const today = moment().format(); // текущая дата  
-    console.log(`today: ${today}`)
 
     this.state = {
-      // currDate: '2020-07-14T15:51:55+03:00',
-      // currDate: '2020-07-14T15:30:00+03:00',
       currDate: today,
       viewedDate: today,                                    // просматриваемая неделя , по дефолту от текущей даты 
-      // viewedDate: today.startOf('isoWeek').format() // начало недели 
+      // viewedDate: today.startOf('isoWeek').format()      // начало недели 
 
       popupIsShow: false,
 
-      events: [{
-        id: '2020-07-14T15:30:00+03:00',
-        date: '2020-07-14T15:30:00+03:00',
-        title: 'ДР Андрея',
-        description: 'нужно поздравить'
+      timeFormData: {
+        id: Date.now(),
+        date: '',
+        title: '',
+        description: '',
+        startTime: '',
+        endTime: '',
       },
-      {
-        id: '2020-07-15T15:30:00+03:00',
-        date: '2020-07-15T15:30:00+03:00',
-        title: 'ДР Андрея',
-        description: 'нужно поздравить'
-      },
-      {
-        id: '2020-07-14T16:30:00+03:00',
-        date: '2020-07-14T16:30:00+03:00',
-        title: 'ДР Андрея2',
-        description: 'нужно поздравить2'
-      },
-      {
-        id: '2020-07-21T15:51:55+03:00',
-        date: '2020-07-21T15:51:55+03:00',
-        title: 'ДР Пети',
-        description: 'нужно поздравить родителей Пети'
-      }
-      ]
+
       // events: [{
       //   id: '2020-07-14T15:30:00+03:00',
-      //   date: '2020-07-14',
-      //   startTime: '15:30',
-      //   startTime: '16:30',
+      //   date: '2020-07-14T15:30:00+03:00',
       //   title: 'ДР Андрея',
       //   description: 'нужно поздравить'
       // },
       // {
       //   id: '2020-07-15T15:30:00+03:00',
-      //   date: '2020-07-15',
-      //   startTime: '15:30',
-      //   startTime: '16:30',
+      //   date: '2020-07-15T15:30:00+03:00',
       //   title: 'ДР Андрея',
       //   description: 'нужно поздравить'
       // },
       // {
       //   id: '2020-07-14T16:30:00+03:00',
-      //   date: '2020-07-14',
-      //   startTime: '16:30',
-      //   startTime: '17:30',
+      //   date: '2020-07-14T16:30:00+03:00',
       //   title: 'ДР Андрея2',
       //   description: 'нужно поздравить2'
       // },
       // {
       //   id: '2020-07-21T15:51:55+03:00',
-      //   date: '2020-07-21',
-      //   startTime: '15:51',
-      //   startTime: '16:51',
+      //   date: '2020-07-21T15:51:55+03:00',
       //   title: 'ДР Пети',
       //   description: 'нужно поздравить родителей Пети'
       // }
-      // ]
+      // ],
+      events: [{
+        id: '2020-07-14T15:30:00+03:00',
+        date: '2020-07-14',
+        startTime: '15:30',
+        endTime: '16:30',
+        title: 'ДР Андрея',
+        description: 'нужно поздравить'
+      },
+      {
+        id: '2020-07-15T15:30:00+03:00',
+        date: '2020-07-15',
+        startTime: '15:30',
+        endTime: '16:30',
+        title: 'ДР Андрея',
+        description: 'нужно поздравить'
+      },
+      {
+        id: '2020-07-14T16:30:00+03:00',
+        date: '2020-07-14',
+        startTime: '16:30',
+        endTime: '17:30',
+        title: 'ДР Андрея2',
+        description: 'нужно поздравить2'
+      },
+      {
+        id: '2020-07-21T15:51:55+03:00',
+        date: '2020-07-21',
+        startTime: '15:51',
+        endTime: '16:51',
+        title: 'ДР Пети',
+        description: 'нужно поздравить родителей Пети'
+      }
+      ],
     }
   }
 
@@ -149,14 +155,31 @@ class Calendar extends React.Component {
     })
   }
 
+  handleFillForm = (event) => {
+    let { name, value } = event.target;
+    this.setState({
+      timeFormData: {
+        ...this.state.timeFormData,
+        [name]: value
+      }
+    });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.state.events.push(this.state.timeFormData)
+    console.log(this.state.events)
+  }
+
   render() {
-    const { currDate, viewedDate, events, popupIsShow } = this.state;
+    const { currDate, viewedDate, events, popupIsShow, timeFormData } = this.state;
 
     const filterEvents = events.filter((event) => moment(event.date).isSame(viewedDate, 'isoWeek'));  // тут отфильтровал СОБЫТИЯ по текущей неделе , для того чтобы показывало ивенты только текущей недели 
+    // '2020-07-21T15:51:55+03:00',
+    // `2020-07-14T15:30`
     console.log(moment(`2020-07-14 15:30`).format())
     // console.log(moment(`2020-07-14T15:30:00+03:00`))
     // console.log('filterEvents', filterEvents)
-
 
     return (
       <div className={`calendar ${this.state.popupIsShow ? 'show' : 'hide'}`}>
@@ -175,9 +198,11 @@ class Calendar extends React.Component {
           events={filterEvents}
         />
         <Popup
-          events={events}
           popupIsShow={popupIsShow}
           hidePopUp={this.hidePopUp}
+          timeFormData={timeFormData}
+          handleFillForm={this.handleFillForm}
+          handleSubmit={this.handleSubmit}
         />
       </div >
     )
