@@ -4,7 +4,7 @@ import RedLine from '../RedLine/RedLine';
 import Event from '../Event/Event';
 
 
-const Hour = ({ hour, currDate, events }) => {
+const Hour = ({ hour, currDate, events, handleDeleteEvent }) => {
   const mHour = moment(hour);
   const isActive = mHour.isSame(currDate, 'hour');
 
@@ -19,7 +19,7 @@ const Hour = ({ hour, currDate, events }) => {
 
       {
         events.map((event) => {
-          return <Event key={event.id} event={event} hour={hour} />
+          return <Event key={event.id} event={event} hour={hour} handleDeleteEvent={handleDeleteEvent} />
         })
       }
 

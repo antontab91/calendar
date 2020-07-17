@@ -5,7 +5,7 @@ import Day from './Day/Day.jsx';
 import Sidebar from './Sidebar/Sidebar.jsx';
 import './main.scss';
 
-const Main = ({ currDate, viewedDate, events }) => {
+const Main = ({ currDate, viewedDate, events, handleDeleteEvent }) => {
 
     const days = getRangeOfDaysByDate(viewedDate);  // массив дней
 
@@ -22,7 +22,7 @@ const Main = ({ currDate, viewedDate, events }) => {
                             })
 
                             return (
-                                <Day key={day} day={day} currDate={currDate} events={filteredEvents} />
+                                <Day key={day} day={day} currDate={currDate} events={filteredEvents} handleDeleteEvent={handleDeleteEvent} />
                             )
                         })
                     }

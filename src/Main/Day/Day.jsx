@@ -4,7 +4,7 @@ import Hour from '../Hour/Hour.jsx'
 import { getRangeOfHoursByDate } from '../../utilites';
 
 
-const Day = ({ day, currDate, events }) => {
+const Day = ({ day, currDate, events, handleDeleteEvent }) => {
 
   const hours = getRangeOfHoursByDate(day);
 
@@ -15,7 +15,7 @@ const Day = ({ day, currDate, events }) => {
           const filteredEvents = events.filter(event => moment(new Date(`${event.date} ${event.startTime}`)).isSame(hour, 'hours'));
 
           return (
-            <Hour key={hour} hour={hour} currDate={currDate} events={filteredEvents} />
+            <Hour key={hour} hour={hour} currDate={currDate} events={filteredEvents} handleDeleteEvent={handleDeleteEvent} />
           )
         })
       }

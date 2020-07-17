@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './event.scss';
 
 
-const Event = ({ hour, event }) => {
+const Event = ({ hour, event, handleDeleteEvent }) => {
   const { date, title, description, startTime, endTime } = event;
 
   const diff = moment(`${date} ${startTime}`).diff(hour, 'minutes');
@@ -18,7 +18,7 @@ const Event = ({ hour, event }) => {
       <div className="event__date"> {`${date} ${startTime} - ${endTime} `}</div>
       <div className="event__title"> {title}</div>
       <div className="event__description"> {description}</div>
-      <div className="event__delete">
+      <div onClick={handleDeleteEvent} className="event__delete">
         <FontAwesomeIcon icon={faTrash} />
         <div className="text">delete</div>
       </div>
