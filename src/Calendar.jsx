@@ -31,18 +31,6 @@ class Calendar extends React.Component {
     }
   }
 
-  // componentDidMount() {
-  // const events = getEvents().resolve((data) => data.json()).resolve(date => {
-  //   this.setState({ events })
-  // });
-
-  // {
-  //   id: '2020-07-14T15:51:55+03:00',
-  //     title: 'ДР Андрея',
-  //       description: 'нужно поздравить'
-  // }
-  // }
-
   componentDidMount() {
     this.fetchEvents();
   }
@@ -100,9 +88,7 @@ class Calendar extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // this.state.events.push(this.state.timeFormData)
     createEvent(this.state.timeFormData).then(getEventsList())
-    console.log(this.state.events)
   }
 
   fetchEvents = () =>
@@ -116,11 +102,6 @@ class Calendar extends React.Component {
     const { currDate, viewedDate, events, popupIsShow, timeFormData } = this.state;
 
     const filterEvents = events.filter((event) => moment(new Date(`${event.date} ${event.startTime}`)).isSame(viewedDate, 'isoWeek'));  // тут отфильтровал СОБЫТИЯ по текущей неделе , для того чтобы показывало ивенты только текущей недели 
-    // '2020-07-21T15:51:55+03:00',
-    // `2020-07-14T15:30`
-    console.log(moment(`2020-07-14 15:30`).format())
-    // console.log(moment(`2020-07-14T15:30:00+03:00`))
-    // console.log('filterEvents', filterEvents)
 
     return (
       <div className={`calendar ${this.state.popupIsShow ? 'show' : 'hide'}`}>
@@ -129,9 +110,9 @@ class Calendar extends React.Component {
           showPopUp={this.showPopUp}
           currDate={currDate}                      // текущая дата в формате 2020-07-14T15:51:55+03:00
           viewedDate={viewedDate}                   // показываемая дата в том же формате 
-          goToNextWeek={this.goToNextWeek}          // + неделя
-          goToPrevWeek={this.goToPrevWeek}          // - неделя
-          goToCurrent={this.goToCurrent}            // текущая   
+          goToNextWeek={this.goToNextWeek}
+          goToPrevWeek={this.goToPrevWeek}
+          goToCurrent={this.goToCurrent}
         />
         <Main
           currDate={currDate}
