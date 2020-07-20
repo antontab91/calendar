@@ -11,7 +11,7 @@ module.exports = (env, argv) => {
         },
         entry: "./src/index.jsx",
         output: {
-            path: __dirname + '/public',
+            path: __dirname + '/build',
             filename: "bundle.js"
         },
         module: {
