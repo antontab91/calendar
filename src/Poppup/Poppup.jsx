@@ -25,6 +25,7 @@ const Popup = ({ popupIsShow, hidePopUp, handleSubmit, handleFillForm, timeFormD
           placeholder="Add Title"
           onChange={handleFillForm}
           value={timeFormData.title}
+          required
         />
         <div className="pop-up__form-wr">
           <div className="form-control">
@@ -34,6 +35,7 @@ const Popup = ({ popupIsShow, hidePopUp, handleSubmit, handleFillForm, timeFormD
               name="date"
               onChange={handleFillForm}
               value={timeFormData.date}
+              required
             />
           </div>
           <div className="form-control">
@@ -43,6 +45,7 @@ const Popup = ({ popupIsShow, hidePopUp, handleSubmit, handleFillForm, timeFormD
               name="startTime"
               onChange={handleFillForm}
               value={timeFormData.startTime}
+              required
             />
           </div>
           <div className="form-control">
@@ -52,6 +55,7 @@ const Popup = ({ popupIsShow, hidePopUp, handleSubmit, handleFillForm, timeFormD
               name="endTime"
               onChange={handleFillForm}
               value={timeFormData.endTime}
+              required
             />
           </div>
         </div>
