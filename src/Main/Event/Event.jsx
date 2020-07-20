@@ -18,7 +18,10 @@ const Event = ({ hour, event, handleDeleteEvent }) => {
       <div className="event__date"> {`${date} ${startTime} - ${endTime} `}</div>
       <div className="event__title"> {title}</div>
       <div className="event__description"> {description}</div>
-      <div onClick={handleDeleteEvent} className="event__delete">
+      <div onClick={() => {
+        // console.log(event)
+        handleDeleteEvent(event.id)
+      }} className="event__delete">
         <FontAwesomeIcon icon={faTrash} />
         <div className="text">delete</div>
       </div>

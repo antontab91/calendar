@@ -99,7 +99,10 @@ class Calendar extends React.Component {
     );
 
   handleDeleteEvent = (id) => {
-    deleteEvent(id).then(() => this.fetchEvents());
+    deleteEvent(id).then((responce) => {
+      console.log(responce)
+      return this.fetchEvents()
+    });
   };
 
   render() {
