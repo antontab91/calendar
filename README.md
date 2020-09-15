@@ -2,7 +2,7 @@
 
 The Calendar app is a miniature copy of Google Calendar, displaying events. (In my interpretation) Calendar is my first big project using React
 
-### Go **[here](https://clever-ritchie-18867d.netlify.app/)** for live demo.
+### Go **[here](https://distracted-bell-a88618.netlify.app/)** for live demo.
 
 # Installing
 
