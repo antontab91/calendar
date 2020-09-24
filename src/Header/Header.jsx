@@ -2,7 +2,7 @@ import React from 'react';
 import AddButton from './AddBtn/AddBtn.jsx';
 import CurrentDate from './CurrentDate/CurrentDate.jsx';
 import MonthNavigation from './MonthNavigation/MonthNavigation.jsx';
-import TableTitle from './TableTitle/TableTitle.jsx';
+import TableTitle from './TableNavigation/TableNavigation.jsx';
 import './header.scss';
 
 const Header = ({
