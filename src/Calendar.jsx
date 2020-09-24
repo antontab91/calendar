@@ -14,9 +14,7 @@ class Calendar extends React.Component {
     this.state = {
       currDate: today,
       viewedDate: today,                                    // просматриваемая неделя , по дефолту от текущей даты 
-      // viewedDate: today.startOf('isoWeek').format()      // начало недели 
       popupIsShow: false,
-
       timeFormData: {
         id: Date.now(),
         date: '',
