@@ -24,8 +24,7 @@ class Calendar extends React.Component {
         endTime: '',
       },
 
-      events: [
-      ],
+      events: [],
     }
   }
 
