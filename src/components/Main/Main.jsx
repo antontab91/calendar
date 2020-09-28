@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import { getRangeOfDaysByDate } from '../../utilites';
+import { getRangeOfDaysByDate } from '../../common/utilites';
 import Day from './Day/Day.jsx';
 import Sidebar from './Sidebar/Sidebar.jsx';
 import './main.scss';
