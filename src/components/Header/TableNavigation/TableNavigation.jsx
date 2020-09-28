@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from "moment";
-import { getRangeOfDaysByDate } from "../../utilites";
+import { getRangeOfDaysByDate } from "../../../utilites";
 import './TableNavigation.scss';
 
 const TableNavigation = ({ currDate, viewedDate }) => {

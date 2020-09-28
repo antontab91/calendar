@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import './sidebar.scss'
-import { getRangeOfHoursByDate } from '../../utilites';
+import { getRangeOfHoursByDate } from '../../../utilites';
 
 
 const Sidebar = () => {

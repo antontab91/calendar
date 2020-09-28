@@ -3,7 +3,7 @@ import moment from 'moment';
 import Header from './Header/Header.jsx';
 import Main from './Main/Main.jsx';
 import Popup from './Poppup/Poppup.jsx';
-import { getEventsList, deleteEvent, createEvent } from "./eventsGateWays.js";
+import { getEventsList, deleteEvent, createEvent } from "../common/eventsGateWays.js";
 
 class Calendar extends React.Component {
   constructor(props) {

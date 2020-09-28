@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import Hour from '../Hour/Hour.jsx'
-import { getRangeOfHoursByDate } from '../../utilites';
+import { getRangeOfHoursByDate } from '../../../utilites';
 
 
 const Day = ({ day, currDate, events, handleDeleteEvent }) => {
